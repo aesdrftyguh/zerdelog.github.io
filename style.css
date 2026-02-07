@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     color-scheme: light;
     /* Force browser to use light UI */
     --primary-color: #f59e0b;
@@ -693,15 +693,18 @@ body {
         height: 100% !important;
         overflow: hidden !important;
         display: flex !important;
-        flex-direction: column-reverse !important;
-        /* Nav at bottom */
+        flex-direction: column !important;
+        /* Changed from column-reverse */
     }
 
     .main-content {
-        height: calc(100vh - 70px) !important;
+        flex: 1;
+        height: 100% !important;
         overflow-y: auto !important;
         padding-top: 15px !important;
-        padding-bottom: 20px !important;
+        padding-bottom: 85px !important;
+        /* Space for fixed bottom nav */
+        width: 100% !important;
     }
 
     .view {
@@ -755,17 +758,31 @@ body {
         z-index: 10000 !important;
         background: #ffffff !important;
         display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
         border-radius: 20px 20px 0 0 !important;
-        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05) !important;
-        padding: 0 !important;
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1) !important;
+        padding: 0 20px !important;
+        border-top: 1px solid rgba(245, 158, 11, 0.1) !important;
+    }
+
+    .sidebar-logo {
+        display: block !important;
+        font-size: 1.5rem !important;
+        margin: 0 !important;
+        order: -1;
+        /* Put logo first */
     }
 
     .nav-menu {
         flex-direction: row !important;
-        width: 100% !important;
+        flex: 1 !important;
+        gap: 10px !important;
         justify-content: space-evenly !important;
         align-items: center !important;
-        height: 100%;
+        height: 100% !important;
+        padding: 0 10px !important;
     }
 
     .nav-item {
